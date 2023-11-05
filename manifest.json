@@ -1,0 +1,73 @@
+{
+  "name": "Helper",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "description": "plugIn for automatiom some part of work",
+  "icons": {"128":  "images/icon.PNG"},
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://test.com/*"],
+      "include_globs": ["*oauth-test*"],
+      "js": ["buttons/login/login.js"]
+    },
+    {
+      "matches": ["https://test2.com/*"],
+      "include_globs": ["*oauth-test2*"],
+      "js": ["buttons/login/login.js"]
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "alarms",
+    "background",
+    "bookmarks",
+    "browsingData",
+    "clipboardRead",
+    "clipboardWrite",
+    "contentSettings",
+    "contextMenus",
+    "cookies",
+    "debugger",
+    "declarativeContent",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "declarativeNetRequestFeedback",
+    "desktopCapture",
+    "downloads",
+    "fontSettings",
+    "gcm",
+    "geolocation",
+    "history",
+    "identity",
+    "idle",
+    "management",
+    "nativeMessaging",
+    "notifications",
+    "pageCapture",
+    "power",
+    "printerProvider",
+    "privacy",
+    "proxy",
+    "scripting",
+    "search",
+    "sessions",
+    "storage",
+    "system.cpu",
+    "system.display",
+    "system.memory",
+    "system.storage",
+    "tabCapture",
+    "tabGroups",
+    "tabs",
+    "tabs",
+    "topSites",
+    "tts",
+    "ttsEngine",
+    "unlimitedStorage",
+    "webNavigation",
+    "webRequest"
+  ]
+}
