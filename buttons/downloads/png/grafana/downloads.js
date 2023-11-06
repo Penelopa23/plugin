@@ -60,7 +60,7 @@ async function every(a) {
     if (a.querySelector(selectorForWholeScreen) != null ||
         a.querySelector(selectorForWholeScreen != undefined)) {
         download(a, a.querySelector(selectorForTitle).title);
-    }else{
+    } else {
         canvas = a.querySelector(selectorForWholeScreen);
         className = canvas.className;
         canvas.className = "theme-dark";
@@ -71,9 +71,9 @@ async function every(a) {
 
 async function withoutAwait(a) {
     if (a.querySelector(selectorForWholeScreen) != null ||
-    a.querySelector(selectorForWholeScreen != undefined)) {
+        a.querySelector(selectorForWholeScreen != undefined)) {
         download(a, a.querySelector(selectorForTitle).title);
-    }else{
+    } else {
         canvas = a.querySelector(selectorForWholeScreen);
         className = canvas.className;
         download(a, a.ariaLabel);

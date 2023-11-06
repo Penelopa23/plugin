@@ -30,7 +30,6 @@ button.addEventListener('click', () => {
 element.appendChild(button);
 
 
-
 function createDefectButton() {
     document.createElement("button");
     button.className = 'css-1fi14p8';

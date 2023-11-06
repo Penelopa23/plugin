@@ -1,6 +1,5 @@
 function readProperty(property, defValue) {
-    if(localStorage.getItem(property) === null)
-    {
+    if (localStorage.getItem(property) === null) {
         localStorage.setItem(property, defValue);
     }
     return localStorage.getItem(property);
@@ -8,7 +7,6 @@ function readProperty(property, defValue) {
 
 
 $('#autoLoginSvg')[0].style.color = readProperty('autoLoginSvg', 'green') === 'true' ? 'green' : 'red';
-console.log(localStorage.getItem('yourLogin2'))
 if (localStorage.getItem('yourLogin') === null || localStorage.getItem('yourPassword') === null) {
     $('#autoLoginSvg')[0].style.color = 'red';
     $('#autoLogin')[0].style.display = 'none'
@@ -26,28 +24,28 @@ if (localStorage.getItem('yourLogin') === null || localStorage.getItem('yourPass
 }
 
 //DownLoad buttons
-$("#download_png").click((function() {
+$("#download_png").click((function () {
     chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
         var tab = tabs[0];
         if (tab) {
             chrome.scripting.executeScript({
-                target: {tabId: tab.id, allFrames: true},
-                files: ['libs/html2canvas.js', 'libs/jquery.js', 'libs/lodash.js',
-                    'buttons/downloads/png/grafana/downloads.js']
+                    target: {tabId: tab.id, allFrames: true},
+                    files: ['libs/html2canvas.js', 'libs/jquery.js', 'libs/lodash.js',
+                        'buttons/downloads/png/grafana/downloads.js']
                 }
             );
         }
     })
-     window.close();
+    window.close();
 }));
 
-$("#login").click((function() {
+$("#login").click((function () {
 
-        chrome.storage.sync.set({ key: localStorage.getItem('yourLogin') }).then(() => {
+        chrome.storage.sync.set({key: localStorage.getItem('yourLogin')}).then(() => {
             console.log("Value is set");
         });
 
-        chrome.storage.sync.set({ myVariable: localStorage.getItem('yourPassword') });
+        chrome.storage.sync.set({myVariable: localStorage.getItem('yourPassword')});
 
         chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
             var tab = tabs[0];
@@ -55,26 +53,26 @@ $("#login").click((function() {
                 chrome.scripting.executeScript({
                     target: {tabId: tab.id, allFrames: true},
                     files: ['buttons/login/login.js'],
-                    })
+                })
             }
         })
     }
 ));
 
-$("#record-btn").click((function() {
+$("#record-btn").click((function () {
         chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
             var tab = tabs[0];
             if (tab) {
                 chrome.scripting.executeScript({
-                target: {tabId: tab.id, allFrames: true},
-                files: ['buttons/downloads/webm/webm.js'],
-            });
+                    target: {tabId: tab.id, allFrames: true},
+                    files: ['buttons/downloads/webm/webm.js'],
+                });
             }
         })
     }
 ));
 
-$('#saveButton').on("click", function() {
+$('#saveButton').on("click", function () {
     if (($('#pswd')[0].value != "") && ($('#lgn')[0].value != "")) {
         localStorage.setItem('yourLogin', $('#lgn')[0].value);
         localStorage.setItem('yourPassword', $('#pswd')[0].value);
