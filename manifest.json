@@ -3,20 +3,34 @@
   "version": "0.0.1",
   "manifest_version": 3,
   "description": "plugIn for automatiom some part of work",
-  "icons": {"128":  "images/icon.PNG"},
+  "icons": {
+    "128": "images/icon.PNG"
+  },
   "action": {
     "default_popup": "popup/popup.html"
   },
   "content_scripts": [
     {
-      "matches": ["https://test.com/*"],
-      "include_globs": ["*oauth-test*"],
-      "js": ["buttons/login/login.js"]
+      "matches": [
+        "https://test.com/*"
+      ],
+      "include_globs": [
+        "*oauth-test*"
+      ],
+      "js": [
+        "buttons/login/login.js"
+      ]
     },
     {
-      "matches": ["https://test2.com/*"],
-      "include_globs": ["*oauth-test2*"],
-      "js": ["buttons/login/login.js"]
+      "matches": [
+        "https://test2.com/*"
+      ],
+      "include_globs": [
+        "*oauth-test2*"
+      ],
+      "js": [
+        "buttons/login/login.js"
+      ]
     }
   ],
   "permissions": [
