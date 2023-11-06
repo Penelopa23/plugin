@@ -3,15 +3,15 @@ var className;
 var link;
 var parents;
 var child;
-var selectorForWholeScreen = "css-85usli-panel-container";
-var selectorForTitle = ".css-1bo04y5-panel-title";
+var selectorForWholeScreen = ".css-kuoxoh-panel-content";
+var selectorForTitle = ".css-1ej1m3x-panel-title";
 
 grafana().then(res => {
     console.log(res);
 })
 
 async function grafana() {
-    parents = document.querySelectorAll('[class="css-85usli-panel-container"]');
+    parents = document.querySelectorAll('[class="css-13l8md7-panel-container"]');
     if (parents.length > 10) {
         console.log("More than 10")
         if (parents.length > 40) {
@@ -57,8 +57,8 @@ async function toThree(p) {
 }
 
 async function every(a) {
-    if (a.querySelector(selectorForWholeScreen) === null ||
-        a.querySelector(selectorForWholeScreen === undefined)) {
+    if (a.querySelector(selectorForWholeScreen) != null ||
+        a.querySelector(selectorForWholeScreen != undefined)) {
         download(a, a.querySelector(selectorForTitle).title);
     }else{
         canvas = a.querySelector(selectorForWholeScreen);
@@ -70,8 +70,8 @@ async function every(a) {
 }
 
 async function withoutAwait(a) {
-    if (a.querySelector(selectorForWholeScreen) === null ||
-    a.querySelector(selectorForWholeScreen === undefined)) {
+    if (a.querySelector(selectorForWholeScreen) != null ||
+    a.querySelector(selectorForWholeScreen != undefined)) {
         download(a, a.querySelector(selectorForTitle).title);
     }else{
         canvas = a.querySelector(selectorForWholeScreen);

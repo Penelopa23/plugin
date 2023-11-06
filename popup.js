@@ -7,9 +7,6 @@ function readProperty(property, defValue) {
 }
 
 
-// chrome.storage.sync.set({ myVariable: "test" });
-
-
 $('#autoLoginSvg')[0].style.color = readProperty('autoLoginSvg', 'green') === 'true' ? 'green' : 'red';
 console.log(localStorage.getItem('yourLogin2'))
 if (localStorage.getItem('yourLogin') === null || localStorage.getItem('yourPassword') === null) {
@@ -58,7 +55,6 @@ $("#login").click((function() {
                 chrome.scripting.executeScript({
                     target: {tabId: tab.id, allFrames: true},
                     files: ['buttons/login/login.js'],
-                    // args: [localStorage.getItem('yourLogin'), localStorage.getItem('yourPassword')]
                     })
             }
         })
@@ -93,7 +89,7 @@ $('#saveButton').on("click", function() {
 });
 
 $('#btnHome').on("click", () => {
-    window.open('https://home.com');
+    window.open('https://github.com/Penelopa23/plugin');
 });
 
 $('#btnDefect').on("click", () => {
