@@ -30,7 +30,7 @@ $("#download_png").click((function () {
         if (tab) {
             chrome.scripting.executeScript({
                     target: {tabId: tab.id, allFrames: true},
-                    files: ['libs/html2canvas.js', 'libs/jquery.js', 'libs/lodash.js',
+                    files: ['libs/html2canvas.js', 'libs/pica.js', 'libs/jquery.js', 'libs/lodash.js',
                         'buttons/downloads/png/grafana/downloads.js']
                 }
             );

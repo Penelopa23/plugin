@@ -36,18 +36,19 @@ async function grafana() {
 }
 
 async function download(ob, name) {
-    var width = ob.style.width;
-    var height = ob.style.height;
-    ob.style.width = '1400px';
-    ob.style.height = '400px'
+
     const prom = await html2canvas(ob);
-    const canvas = await prom;
+
+    var fromCanvas = await prom;
+    var image = new Image(1920, 1080);
+    var toCanvas = document.createElement('canvas');
+    toCanvas.width = 1920;
+    toCanvas.height = 1080;
+    var newCanvas = await pica().resize(fromCanvas, toCanvas);
     link = document.createElement('a');
-    link.href = canvas.toDataURL('png');
+    link.href = newCanvas.toDataURL('png', 1);
     link.download = name;
     link.click();
-    ob.style.width = width;
-    ob.style.height = height;
 }
 
 async function toThree(p) {
