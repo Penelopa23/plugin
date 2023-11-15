@@ -2,16 +2,18 @@ var host = document.location.host
 var username;
 var password;
 
+chrome.runtime.sendMessage({method: "getLocalStorage", key: "yourPassword"},
+    function (response) {
+        console.log(response.data)
+        password = response.data;
+    })
 
+chrome.runtime.sendMessage({method: "getLocalStorage", key: "yourLogin"},
+    function (response) {
+        console.log(response.data)
+        username = response.data;
+    })
 async function login() {
-
-    await chrome.storage.sync.get(["key"]).then((result) => {
-        username = result.key;
-    });
-
-    await chrome.storage.sync.get(["myVariable"]).then((result) => {
-        password = result.myVariable;
-    });
 
     var delayForLogin = async (ms) => await new Promise(resolve => setTimeout(resolve, ms));
 

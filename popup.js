@@ -5,6 +5,14 @@ function readProperty(property, defValue) {
     return localStorage.getItem(property);
 }
 
+chrome.runtime.onMessage.addListener(
+    function (request, sender, sendResponse) {
+        if (request.method == "getLocalStorage") {
+            var value = localStorage.getItem(request.key);
+            sendResponse({data: value})
+        }
+    })
+
 
 $('#autoLoginSvg')[0].style.color = readProperty('autoLoginSvg', 'green') === 'true' ? 'green' : 'red';
 if (localStorage.getItem('yourLogin') === null || localStorage.getItem('yourPassword') === null) {
