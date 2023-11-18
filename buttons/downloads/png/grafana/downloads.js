@@ -5,12 +5,32 @@ var parents;
 var child;
 var selectorForWholeScreen = ".css-kuoxoh-panel-content";
 var selectorForTitle = ".css-1ej1m3x-panel-title";
+var width;
+var height;
+var screenSize;
 
-grafana().then(res => {
-    console.log(res);
-})
+async function startDownloadGrafanaPNG() {
+
+    await chrome.storage.local.get(["screenWidth"]).then(async (result) => {
+        width = result.screenWidth;
+        console.log("Value screenWidth is " + result.screenWidth);
+        await chrome.storage.local.get(["heightScreen"]).then(async (result) => {
+            height = result.heightScreen;
+            console.log("Value heightScreen is " + result.heightScreen);
+            await chrome.storage.local.get(["screenSize"]).then(async (result) => {
+                screenSize = result.screenSize;
+                console.log("Value screenSize is " + result.screenSize);
+                grafana().then(res => {
+                    console.log(res);
+                })
+            });
+        });
+    });
+
+}
 
 async function grafana() {
+
     parents = document.querySelectorAll('[class="css-13l8md7-panel-container"]');
     if (parents.length > 10) {
         console.log("More than 10")
@@ -40,15 +60,22 @@ async function download(ob, name) {
     const prom = await html2canvas(ob);
 
     var fromCanvas = await prom;
-    var image = new Image(1920, 1080);
-    var toCanvas = document.createElement('canvas');
-    toCanvas.width = 1920;
-    toCanvas.height = 1080;
-    var newCanvas = await pica().resize(fromCanvas, toCanvas);
-    link = document.createElement('a');
-    link.href = newCanvas.toDataURL('png', 1);
-    link.download = name;
-    link.click();
+    if (screenSize === "original") {
+        link = document.createElement('a');
+        link.href = fromCanvas.toDataURL('png', 1);
+        link.download = name;
+        link.click();
+    } else {
+        var toCanvas = document.createElement('canvas');
+        toCanvas.width = width;
+        toCanvas.height = height;
+        var newCanvas = await pica().resize(fromCanvas, toCanvas);
+        link = document.createElement('a');
+        link.href = newCanvas.toDataURL('png', 1);
+        link.download = name;
+        link.click();
+    }
+
 }
 
 async function toThree(p) {
@@ -87,3 +114,5 @@ async function withoutAwait(a) {
         canvas.className = className;
     }
 }
+
+startDownloadGrafanaPNG()

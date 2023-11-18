@@ -1065,17 +1065,6 @@ css-1vkaay2 {
     margin-left: auto;
 }
 
-.css-vubbuv {
-    user-select: none;
-    width: 1em;
-    height: 1em;
-    display: inline-block;
-    fill: currentcolor;
-    flex-shrink: 0;
-    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    font-size: 1.5rem;
-}
-
 img, svg {
     vertical-align: middle;
 }
@@ -1157,7 +1146,151 @@ img, svg {
 }
 
 .css-79jft4:hover {
-    background: #c8e5ff;
+    background: rgb(255, 255, 255);
+}
+
+.san432f {
+    padding-left: 12px;
+}
+
+.css-1k2jwpv {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    background-color: rgb(30, 38, 36);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 32px;
+    border-radius: 4px;
+    pointer-events: auto;
+    overflow: hidden;
+    right: 32px;
+    top: 8px;
+    z-index: 10;
+}
+
+.css-sqqrc2 {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 8px 12px 8px 16px;
+    cursor: pointer;
+    background: rgb(30, 38, 36);
+}
+
+input#height {
+    width: 50px;
+    height: 25px;
+    /* margin: 0px 120px 2px 1px; */
+    border-radius: 4px;
+    color: black;
+}
+
+input#width {
+    width: 50px;
+    height: 25px;
+    /* margin: 0px 120px 2px 1px; */
+    border-radius: 4px;
+    color: black;
+}
+
+.css-sqqrc2:hover {
+    background: rgb(53, 60, 58);
+}
+
+.css-1au6iuj {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid rgb(95, 104, 101);
+}
+
+.css-1s3owxt {
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    text-align: inherit;
+    font-weight: 500;
+    line-height: 1.6;
+    font-family: "Oldschool Grotesk", sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.css-sqqrc2 svg {
+    margin-right: 12px;
+    display: block;
+    flex: 0 0 auto;
+}
+
+ .css-1k2jwpv svg {
+     margin-right: 12px;
+ }
+
+ .css-vubbuv {
+     user-select: none;
+     width: 1em;
+     height: 1em;
+     display: inline-block;
+     fill: currentcolor;
+     flex-shrink: 0;
+     transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+     font-size: 1.5rem;
+ }
+
+.css-sqqrc2 svg {
+    margin-right: 12px;
+    display: block;
+    flex: 0 0 auto;
+}
+
+.css-1k2jwpv svg {
+    margin-right: 12px;
+}
+
+.css-vubbuv {
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: currentcolor;
+    flex-shrink: 0;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: 1.5rem;
+}
+.css-sqqrc2 svg {
+    margin-right: 12px;
+    display: block;
+    flex: 0 0 auto;
+}
+
+.css-1k2jwpv svg {
+     margin-right: 12px;
+ }
+img, svg {
+    vertical-align: middle;
+}
+* {
+    box-sizing: border-box;
+}
+svg {
+    fill: none;
+    stroke-width: 1.5;
+    width: 24px;
+}
+user agent stylesheet
+svg:not(:root) {
+    overflow-clip-margin: content-box;
+    overflow: hidden;
+}
+
+.css-1s3owxt {
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    text-align: inherit;
+    font-weight: 500;
+    line-height: 1.6;
+    font-family: "Oldschool Grotesk", sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .css-i7zvr1 {
