@@ -3,19 +3,18 @@ var username;
 var password;
 
 
-
 async function autoLogin() {
-        await chrome.storage.local.get(["yourLogin"]).then(async (result) => {
-            username = result.yourLogin;
-            console.log("Value login is " + result.yourLogin);
-            await chrome.storage.local.get(["yourPassword"]).then(async (result) => {
-                password = result.yourPassword;
-                console.log("Value password is " + result.yourPassword);
-                login().then(res => {
-                    console.log(res);
-                })
-            });
+    await chrome.storage.local.get(["yourLogin"]).then(async (result) => {
+        username = result.yourLogin;
+        console.log("Value login is " + result.yourLogin);
+        await chrome.storage.local.get(["yourPassword"]).then(async (result) => {
+            password = result.yourPassword;
+            console.log("Value password is " + result.yourPassword);
+            login().then(res => {
+                console.log(res);
+            })
         });
+    });
 }
 
 async function login() {
