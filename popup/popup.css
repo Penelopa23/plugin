@@ -1176,6 +1176,10 @@ img, svg {
     background: rgb(30, 38, 36);
 }
 
+.css-asbfasjb {
+    width: max-content;
+}
+
 input#height {
     width: 50px;
     height: 25px;
