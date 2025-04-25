@@ -2,7 +2,7 @@
   "name": "Helper",
   "version": "0.0.1",
   "manifest_version": 3,
-  "description": "plugIn for automatiom some part of work",
+  "description": "plugIn for automation some part of work",
   "icons": {
     "128": "images/icon.PNG"
   },
